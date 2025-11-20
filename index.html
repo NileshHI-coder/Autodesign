@@ -3,25 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autodesign</title>
+    <title>Autodesign Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Autodesign</h1>
-        <h2>By King Nilesh</h2>
-    </header>
+<header>
+    <h1>Autodesign</h1>
+    <h2>By King Nilesh</h2>
+</header>
 
-    <section class="container">
-        <section class="container">
-    <h3>Welcome to Autodesign</h3>
-    <p>Here you can upload images, generate layouts and explore auto-design features.</p>
-
-    <input type="file" id="fileInput">
+<section class="container">
+    <h3>Upload an Image</h3>
+    <input type="file" id="fileInput" accept="image/*">
 
     <button id="startBtn">Click to Start</button>
+
+    <h3>Uploaded Image:</h3>
+    <img id="preview" style="display:none; width:300px; border-radius:10px;">
+
+    <h3>Auto-Design Output:</h3>
+    <canvas id="designCanvas" width="400" height="400"></canvas>
+
+    <h3>Object Detection Output:</h3>
+    <canvas id="detectCanvas" width="400" height="400"></canvas>
+
 </section>
-    <script src="script.js"></script>
+
+<!-- TensorFlow + COCO-SSD -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
